@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -26,8 +26,43 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+
+group :development, :test do
+  gem 'minitest-rails'
+  gem 'parallel_tests'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request' #gem required for rails panel chrome extension
+  gem 'hirb'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer', '~> 0.4.9.1'
+  gem 'awesome_print'
+end
+
+group :test do
+  gem 'minitest-rails-capybara'
+  gem 'selenium-webdriver', '= 2.41.0'
+  gem 'cucumber-rails', require: false
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'rspec-expectations', require: false
+  gem 'simplecov', '~> 0.9.0', require: false
+  gem 'simplecov-rcov', require: false
+  gem 'poltergeist'
+  gem 'webmock'
+  gem 'delorean'
+  gem 'syntax'
+  gem 'm', '~> 1.3.1'
+end
+
+
+
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
